@@ -24,3 +24,16 @@ const m = {
   age: 36,
   ocupation: 'currently unemployed',
 };
+
+function createCharacter(firstName, lastName, age, occupation) {
+  return {
+    firstName, lastName, age, occupation,
+
+    getFullName() {
+      return `${this.firstName} ${this.lastName}`;
+    },
+  };
+}
+
+const m2 = createCharacter('marge', 'Simpson', 36, 'currently unemployed');
+const h2 = createCharacter('homer', 'Simpson', 39, 'safety inspector');

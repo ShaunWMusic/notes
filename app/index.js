@@ -95,7 +95,7 @@ class Character {
     this.last = data.lastName;
     this.universe = data.universe;
     this.age = data.age;
-    this.profession - data.profession;
+    this.profession = data.profession;
   }
 
   isTrustworthy() {
@@ -126,5 +126,11 @@ characters.forEach((item) => {
   <p class="character__profession"></p>
   <p class="character__age"></p>`;
 
-  console.log(item);
+  el.querySelector('.character__name').innerText = `${c.first} ${c.last}`; 'Olivia Dunham';
+  el.querySelector('.character__profession').innerText = c.profession;
+  el.querySelector('.character__age').innerText = c.age;
+
+  document.body.appendChild(el);
+
+  console.log(c);
 });

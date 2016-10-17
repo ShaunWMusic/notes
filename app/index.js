@@ -43,19 +43,33 @@ console.log(m2.getFullName());
 console.log(h2.getFullName);
 console.log(h2.getFullName());
 
-//the "new" keyword and constructor functions
+// the "new" keyword and constructor functions
 // document is lower case
 // string upper case
 //
-functions Simpson(firstName, lastName, age, occupation) {
+function Simpson(firstName, lastName, age, occupation) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.age = age;
   this.occupation = occupation;
+
+// creates a unique implementation of the "getFullName"
+// // function for each instance of Simpson
 }
 
-//use this to refer to a current object
+Simpson.prototype.getFullName = function () {
+  return `${this.firstName} ${this.lastName}`;
+};// use this to refer to a current object
+
 
 const m3 = new Simpson('marge', 'simpson', 36, 'currently unemployed');
+const h3 = new Simpson('homer', 'simpson', 39, 'safety inspector');
 
-debugger;
+
+console.log(m3);
+console.log(typeof m3); // this still says object
+console.log(m3 instanceof Simpson); // checks to see if m3 is ACTUALLY built based on the Simpson "constructor"
+//  'typeof' and 'instanceof'
+
+
+// debugger;

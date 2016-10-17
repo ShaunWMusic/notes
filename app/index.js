@@ -1,5 +1,5 @@
 import 'whatwg-fetch';
-
+import './character-view';
 // practicing with "prototypes"
 
 const duck = 'Dafty';
@@ -115,22 +115,17 @@ for (let i = 0; i < characters.length; i++) {
 
   console.log(c);
 }
-
+// for each loop
 characters.forEach((item) => {
   const c = new Character(item);
 
-  const el = document.createElement('div');
-  el.classList.add('character');
-  el.innerHTML = `
-  <p class="character__name"></p>
-  <p class="character__profession"></p>
-  <p class="character__age"></p>`;
+  const view = new characterView(c);
+// this runs the render in characterView
+  view.render();
 
-  el.querySelector('.character__name').innerText = `${c.first} ${c.last}`; 'Olivia Dunham';
-  el.querySelector('.character__profession').innerText = c.profession;
-  el.querySelector('.character__age').innerText = c.age;
 
-  document.body.appendChild(el);
+  document.body.appendChild(view.el);
 
   console.log(c);
 });
+// for each  loop

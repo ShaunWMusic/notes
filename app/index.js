@@ -37,3 +37,9 @@ function createCharacter(firstName, lastName, age, occupation) {
 
 const m2 = createCharacter('marge', 'Simpson', 36, 'currently unemployed');
 const h2 = createCharacter('homer', 'Simpson', 39, 'safety inspector');
+
+console.log(m2.getFullName);
+console.log(m2.getFullName());
+console.log(h2.getFullName);
+console.log(h2.getFullName());
+debugger;

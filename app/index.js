@@ -108,3 +108,23 @@ Character.prototype.showName = 'Fringe';
 const olive = new Character(characters[0]);
 console.log(olive.showName);
 console.log(olive.isTrustworthy());
+
+
+for (let i = 0; i < characters.length; i++) {
+  const c = new Character(characters[i]);
+
+  console.log(c);
+}
+
+characters.forEach((item) => {
+  const c = new Character(item);
+
+  const el = document.createElement('div');
+  el.classList.add('character');
+  el.innerHTML = `
+  <p class="character__name"></p>
+  <p class="character__profession"></p>
+  <p class="character__age"></p>`;
+
+  console.log(item);
+});

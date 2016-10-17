@@ -69,7 +69,42 @@ const h3 = new Simpson('homer', 'simpson', 39, 'safety inspector');
 console.log(m3);
 console.log(typeof m3); // this still says object
 console.log(m3 instanceof Simpson); // checks to see if m3 is ACTUALLY built based on the Simpson "constructor"
+console.log(m3.getFullName);
+console.log(m3.getFullName === h3.getFullName);
+console.log(m3.toString);
 //  'typeof' and 'instanceof'
 
 
-// debugger;
+import characters from './fringe';
+
+// function Character(data) {
+//   this.first = data.firstName;
+//   this.last = data.lastName;
+//   this.universe = data.universe;
+//   this.age = data.age;
+//   this.profession - data.profession;
+// }
+
+// Character.prototype.isTrustworthy = function () {
+  // return this.universe === 1;
+// };
+
+class Character {
+  constructor(data) {
+    this.first = data.firstName;
+    this.last = data.lastName;
+    this.universe = data.universe;
+    this.age = data.age;
+    this.profession - data.profession;
+  }
+
+  isTrustworthy() {
+    return this.universe === 1;
+  }
+}
+
+Character.prototype.showName = 'Fringe';
+
+const olive = new Character(characters[0]);
+console.log(olive.showName);
+console.log(olive.isTrustworthy());

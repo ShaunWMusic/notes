@@ -71,7 +71,7 @@ form.addEventListener('submit', (ev) => {
 // this is considered a CALLBACK
 const later = new Promise((resolve, reject) => {
   setTimeout(() => {
-    // resolve('Timeout Promise');
+    resolve('Timeout Promise');
     reject('there was something that went terribly wrong');
   }, 2000);
 });

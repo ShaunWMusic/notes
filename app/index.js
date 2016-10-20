@@ -37,7 +37,36 @@ family.forEach((item) => {
 
 window.setTimeout(() => {
   console.log('I should run later');
-}, 2000);
+}, 2000); // 2000 milliseconds or 2 seconds
 // it may or may not run. we can fairly guess on it.
 
 console.log('I will run later than that...');
+
+// Events: what to do in response to our user
+
+
+const form = document.querySelector('.contact');
+const response = document.querySelector('.response');
+const name = document.querySelector('input[name=name]');
+const message = document.querySelector('textarea[name=message]');
+
+// onClick is similar but
+form.addEventListener('submit', (ev) => {
+  ev.preventDefault();
+
+  response.innerText = `
+    Hello: ${name.value},
+    thank you for your thoughts that: ${message.value}.
+  `;
+});
+
+// promises give us a guarantee that our Callbacks will run
+// ... Under certain conditions
+
+// class or constructor function
+// its not tied up with any other function
+const later = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve();
+  }, 1000);
+});

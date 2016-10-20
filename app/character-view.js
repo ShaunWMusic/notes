@@ -19,3 +19,6 @@ constructor(model) {
   this.el.querySelector('.character__age').innerText = this.model.age;
 }
 }
+
+
+//using the "new" keyword takes constructor and runs

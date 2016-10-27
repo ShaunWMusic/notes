@@ -5,27 +5,31 @@ const app = new Vue({
   el: '.app',
 
   data() {
-    const model = {
-      name: 'Hello from Javascript',
-
-      pokemon: [
-        'Pikachu',
-        'Bulbasaur',
-        'Charmander',
-        'Squirtle',
-      ],
+    return {
+      currentSelection: null,
+      name: '',
+      stats: null,
+      pokemon: null,
     };
+  },
 
-    setTimeout(() => {
-      alert('Charmander is evolving!!!');
+  mounted() {
+    fetch('http://pokeapi.co/api/v2/pokemon')
+        .then((r) => r.json())
+        .then((data) => {
+          this.pokemon = data.results;
 
-      model.pokemon = model.pokemon.map((p) => {
-        if (p === 'Charmander') {
-          return 'Charmeleon';
-        }
-        return p;
+          this.choosePokemon(data.results[0]);
+        });
+  },
+
+  methods: {
+    choosePokemon(pokemon) {
+      fetch(pokemon.url)
+      .then((r) => r.json())
+      .then((data) => {
+        this.currentSelection = data;
       });
-    }, 5000);
-    return model;
+    },
   },
 });

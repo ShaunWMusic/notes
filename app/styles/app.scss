@@ -4,3 +4,17 @@
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
+
+$c-primary: #043340;
+$c-primary-light: #7fbcb4;
+$c-primary-med: #0c6775;
+$c-pop: #59293a;
+$c-pop-light: #c0555d;
+
+$c-white: #dedede;
+$c-gray: #desaturate($c-primary-light, 30%);
+
+$m-gutter: 0.5rem;
+$m-maxwidth: 50rem;
+
+$media-phone: (min-width: 500px);
